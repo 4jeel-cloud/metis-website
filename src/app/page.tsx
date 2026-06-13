@@ -2,19 +2,20 @@
 
 import { motion } from "motion/react"
 import Image from "next/image"
-import { ArrowRight, Database, ShoppingCart, Monitor, Wrench, Sparkle } from "lucide-react"
+import { ArrowRight, Database, ShoppingCart, Monitor, Users, Sparkle, Wrench } from "lucide-react"
 
 const services = [
   { title: "Metis ERP", desc: "Open-source ERP for SMEs — accounting, inventory, HR, CRM, manufacturing, and more.", icon: Database },
-  { title: "Metis POS", desc: "Desktop point of sale — fully offline, no server required. Built with Laravel + Electron.", icon: Monitor },
-  { title: "Metis POS Web", desc: "Web-based point of sale with stock management, invoicing, barcodes, and multi-user support.", icon: ShoppingCart },
+  { title: "Metis POS", desc: "Point of sale — web-based or fully offline desktop app. Stock, invoicing, barcodes, and multi-user.", icon: ShoppingCart },
+  { title: "Metis CRM", desc: "Free & open-source Laravel CRM for complete customer lifecycle management. WhatsApp & VoIP ready.", icon: Users },
   { title: "Custom Solutions", desc: "Tailored business software built on modern stacks — Laravel, Filament, Vue, and React.", icon: Wrench },
 ]
 
 const work = [
   { title: "Metis ERP", category: "Enterprise Platform", from: "#ff0000", to: "#cc0000" },
-  { title: "Metis POS Desktop", category: "Desktop App", from: "#e50000", to: "#990000" },
-  { title: "Metis POS Web", category: "Web App", from: "#ff1a1a", to: "#800000" },
+  { title: "Metis CRM", category: "Customer Relations", from: "#e50000", to: "#990000" },
+  { title: "Metis POS", category: "Point of Sale", from: "#ff1a1a", to: "#800000" },
+  { title: "Metis POS Desktop", category: "Desktop App", from: "#cc0000", to: "#660000" },
 ]
 
 const stats = [
@@ -268,7 +269,7 @@ export default function Home() {
             </h2>
           </FadeUp>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {work.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
                 <a href="#" className="group block">
@@ -329,7 +330,7 @@ export default function Home() {
                 we make tools that small and medium businesses rely on every day.
               </p>
               <ul className="mt-8 space-y-4 border-l-4 border-[#ff0000] pl-5">
-                {["Open-source ERP with modular plugin system", "Offline desktop POS powered by Laravel + Electron", "Web-based POS with barcode, invoicing, and reporting"].map((item) => (
+                {["Open-source ERP with modular plugin system", "CRM with WhatsApp & VoIP integrations", "POS — web-based and offline desktop"].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm leading-[1.6] text-[#6b6b6b]">
                     <span className="h-2 w-2 shrink-0 bg-[#ff0000]" />
                     {item}
