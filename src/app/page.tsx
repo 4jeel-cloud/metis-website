@@ -249,32 +249,33 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── Work ── */}
-      <section id="work" className="relative overflow-hidden px-5 py-14 sm:px-8 md:py-20 lg:py-28">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff0000,#990000)]" />
-        <PixelGrid className="opacity-[0.08]" />
+      <section id="work" className="relative overflow-hidden bg-[#111] px-5 py-14 sm:px-8 md:py-20 lg:py-28">
+        <PixelGrid className="opacity-[0.06]" />
         <div className="relative mx-auto max-w-6xl">
           <FadeUp>
-            <span className="inline-block border-2 border-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+            <span className="inline-block border-2 border-red-600 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-red-500">
               Selected Work
             </span>
-            <div className="mt-3 h-1 w-12 bg-white" />
+            <div className="mt-3 h-1 w-12 bg-red-600" />
             <h2 className="mt-8 max-w-2xl text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[48px]">
-              Our <span>products.</span>
+              Our <span className="text-red-400">products.</span>
             </h2>
           </FadeUp>
 
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {work.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
-                <a href="#" className="flex flex-col items-center gap-3">
+                <a href="#" className="group flex flex-col items-center gap-4">
+                  <div className="relative flex items-center justify-center border border-white/10 bg-white/[0.03] p-10 transition-all duration-300 group-hover:border-white/30 group-hover:bg-white/[0.06]">
                     <Image
                       src={p.logo}
                       alt={p.title}
                       width={524}
                       height={476}
-                      className="h-28 w-auto border-2 border-white object-contain opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100 sm:h-32"
+                      className="h-32 w-auto object-contain transition-all duration-500 group-hover:scale-110 sm:h-36"
                     />
-                  <span className="text-xs font-semibold tracking-wider text-white/50">
+                  </div>
+                  <span className="text-sm font-semibold tracking-wider text-white/40 transition-colors group-hover:text-white/70">
                     {p.title}
                   </span>
                 </a>
