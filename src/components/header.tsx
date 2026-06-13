@@ -27,7 +27,7 @@ export default function Header() {
                 <div className="h-2 w-2 bg-[#ff0000] sm:h-1.5 sm:w-1.5" />
               </div>
             </div>
-            <Image src="/logo-black.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain sm:h-8" priority />
+            <Image src="/black-font.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain sm:h-8" priority />
           </Link>
 
           <nav className="hidden items-center md:flex">
