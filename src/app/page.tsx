@@ -252,8 +252,6 @@ export default function Home() {
       <section id="work" className="relative overflow-hidden px-5 py-14 sm:px-8 md:py-20 lg:py-28">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff0000,#990000)]" />
         <PixelGrid className="opacity-[0.08]" />
-        <div className="scan-line" />
-
         <div className="relative mx-auto max-w-6xl">
           <FadeUp>
             <span className="inline-block border-2 border-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
@@ -261,7 +259,7 @@ export default function Home() {
             </span>
             <div className="mt-3 h-1 w-12 bg-white" />
             <h2 className="mt-8 max-w-2xl text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[48px]">
-              Our <span className="text-white/60">products.</span>
+              Our <span>products.</span>
             </h2>
           </FadeUp>
 
