@@ -2,19 +2,19 @@
 
 import { motion } from "motion/react"
 import Image from "next/image"
-import { ArrowRight, Palette, Globe, Cpu, Layers, Sparkle } from "lucide-react"
+import { ArrowRight, Database, ShoppingCart, Monitor, Wrench, Sparkle } from "lucide-react"
 
 const services = [
-  { title: "Strategy & Design", desc: "Brand identity, UX research, and product design.", icon: Palette },
-  { title: "Web Development", desc: "Fast, accessible front-end engineering.", icon: Globe },
-  { title: "Infrastructure", desc: "Cloud-native architecture at scale.", icon: Cpu },
-  { title: "Full-Stack", desc: "End-to-end product engineering.", icon: Layers },
+  { title: "Metis ERP", desc: "Open-source ERP for SMEs — accounting, inventory, HR, CRM, manufacturing, and more.", icon: Database },
+  { title: "Metis POS", desc: "Desktop point of sale — fully offline, no server required. Built with Laravel + Electron.", icon: Monitor },
+  { title: "Metis POS Web", desc: "Web-based point of sale with stock management, invoicing, barcodes, and multi-user support.", icon: ShoppingCart },
+  { title: "Custom Solutions", desc: "Tailored business software built on modern stacks — Laravel, Filament, Vue, and React.", icon: Wrench },
 ]
 
 const work = [
-  { title: "Nexus", category: "Platform", from: "#ff0000", to: "#cc0000" },
-  { title: "Aether", category: "Design System", from: "#e50000", to: "#990000" },
-  { title: "Cipher", category: "Mobile App", from: "#ff1a1a", to: "#800000" },
+  { title: "Metis ERP", category: "Enterprise Platform", from: "#ff0000", to: "#cc0000" },
+  { title: "Metis POS Desktop", category: "Desktop App", from: "#e50000", to: "#990000" },
+  { title: "Metis POS Web", category: "Web App", from: "#ff1a1a", to: "#800000" },
 ]
 
 const stats = [
@@ -169,7 +169,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.75 }}
             >
-              A design &amp; technology studio. We partner with ambitious teams to craft products that feel inevitable.
+              Open-source business software. ERP, POS, and custom solutions built for real-world operations.
             </motion.p>
 
             <motion.div
@@ -182,7 +182,7 @@ export default function Home() {
                 href="#work"
                 className="inline-flex items-center gap-2 border-2 border-[#ff0000] bg-[#ff0000] px-7 py-3 text-sm font-semibold text-white shadow-[4px_4px_0_#cc0000] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#cc0000] active:shadow-none"
               >
-                See our work <ArrowRight className="h-4 w-4" />
+                Our Products <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#services"
@@ -225,7 +225,7 @@ export default function Home() {
             <SectionLabel>Services</SectionLabel>
             <SectionLine />
             <SectionHeading>
-              Everything from <span className="text-[#ff0000]">zero</span> to one.
+              Software that runs your <span className="text-[#ff0000]">business</span>.
             </SectionHeading>
           </FadeUp>
 
@@ -264,7 +264,7 @@ export default function Home() {
             </span>
             <div className="mt-3 h-1 w-12 bg-white" />
             <h2 className="mt-8 max-w-2xl text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[48px]">
-              Things we&apos;ve <span className="text-white/60">made.</span>
+              Our <span className="text-white/60">products.</span>
             </h2>
           </FadeUp>
 
@@ -324,12 +324,12 @@ export default function Home() {
                 Craft over <span className="text-[#ff0000]">chaos.</span>
               </SectionHeading>
               <p className="mt-6 text-base leading-[1.8] text-[#6b6b6b]">
-                Named after the Titaness of wisdom and craft, Metis was founded on the belief that
-                great technology should feel inevitable. We work with founders and enterprises to
-                turn ambiguous challenges into elegant, lasting systems.
+                Metis builds open-source business software that actually works. From ERP systems
+                that handle accounting, inventory, and HR, to POS solutions that run entirely offline —
+                we make tools that small and medium businesses rely on every day.
               </p>
               <ul className="mt-8 space-y-4 border-l-4 border-[#ff0000] pl-5">
-                {["Remote-first across 12 countries", "Flat structure, no bureaucracy", "Open source by default"].map((item) => (
+                {["Open-source ERP with modular plugin system", "Offline desktop POS powered by Laravel + Electron", "Web-based POS with barcode, invoicing, and reporting"].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm leading-[1.6] text-[#6b6b6b]">
                     <span className="h-2 w-2 shrink-0 bg-[#ff0000]" />
                     {item}
@@ -344,8 +344,8 @@ export default function Home() {
                     Philosophy
                   </div>
                   <p className="text-lg leading-[1.8] italic text-[#4a4a4a]">
-                    &ldquo;The best interface is the one you don&apos;t notice. Design isn&apos;t how
-                    something looks — it&apos;s how it works.&rdquo;
+                    &ldquo;Business software shouldn&apos;t get in the way. We build tools that are
+                    powerful enough for enterprise, simple enough for anyone.&rdquo;
                   </p>
                   <div className="mt-8 h-px w-full bg-[#e0dcd3]" />
                   <p className="mt-5 text-sm font-semibold text-[#ff0000]">
@@ -371,7 +371,7 @@ export default function Home() {
                 Have an idea? <span className="text-[#ff0000]">Tell us.</span>
               </SectionHeading>
               <p className="mt-4 text-sm text-[#6b6b6b]">
-                Drop a message and we&apos;ll get back within 24 hours.
+                Need a custom ERP or POS setup? We&apos;ll get back within 24 hours.
               </p>
             </div>
           </FadeUp>
