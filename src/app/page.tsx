@@ -107,12 +107,7 @@ export default function Home() {
         <PixelDiamond className="absolute left-[8%] top-[55%] h-5 w-5" size={20} />
         <PixelDiamond className="absolute right-[20%] bottom-[25%] h-3 w-3" size={12} />
 
-        <motion.div
-          className="absolute left-0 right-0 top-0 h-px bg-[#ff0000]/20"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        />
+        <div className="absolute left-0 right-0 top-0 h-px bg-[#ff0000]/20" />
 
         <div className="relative mx-auto max-w-6xl">
           <motion.div
@@ -139,7 +134,7 @@ export default function Home() {
 
             <h1 className="max-w-4xl text-[clamp(2.8rem,10vw,5.5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
               <motion.span
-                className="block glitch-text"
+                className="block"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}

@@ -175,19 +175,6 @@
   pointer-events: none;
 }
 
-/* ── Glitch flicker ── */
-@keyframes glitch {
-  0%, 90%, 100% { opacity: 1; }
-  92% { opacity: 0.8; }
-  94% { opacity: 1; }
-  96% { opacity: 0.6; }
-  98% { opacity: 1; }
-}
-
-.glitch-text {
-  animation: glitch 4s ease-in-out infinite;
-}
-
 /* ── Pixel float ── */
 @keyframes pixelFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); }
