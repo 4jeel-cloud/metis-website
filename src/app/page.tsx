@@ -120,7 +120,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <Image src="/black-font.png" alt="Metis" width={240} height={64} className="mb-4 h-10 w-auto object-contain sm:mb-6 sm:h-14" priority />
+              <Image src="black-font.png" alt="Metis" width={240} height={64} className="mb-4 h-10 w-auto object-contain sm:mb-6 sm:h-14" priority />
             </motion.div>
 
             <motion.span
@@ -289,7 +289,7 @@ export default function Home() {
                         backgroundSize: "32px 32px",
                       }}
                     />
-                    <Image src="/white-font.png" alt="" width={72} height={72} className="h-20 w-20 object-contain opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:opacity-30" />
+                    <Image src="white-font.png" alt="" width={72} height={72} className="h-20 w-20 object-contain opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:opacity-30" />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6 pt-16 sm:p-8">
                       <div className="text-sm font-medium text-white/70 md:translate-y-3 md:opacity-0 md:transition-all md:duration-300 md:group-hover:translate-y-0 md:group-hover:opacity-100">
                         {p.category}
@@ -416,7 +416,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <FadeUp>
             <div className="flex flex-col items-center justify-between gap-10 sm:flex-row">
-              <Image src="/white-font.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain invert brightness-0" />
+              <Image src="white-font.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain invert brightness-0" />
               <div className="flex gap-10 text-sm">
                 <a href="#" className="text-white/50 transition-colors hover:text-white">Twitter</a>
                 <a href="#" className="text-white/50 transition-colors hover:text-white">GitHub</a>

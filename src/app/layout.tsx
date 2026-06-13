@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Metis — Open-Source Business Software",
   description:
     "ERP, CRM, POS, and custom business software. Open-source solutions for SMEs and enterprises.",
-  icons: [{ rel: "icon", url: "/black-font.png", type: "image/png" }],
+  icons: [{ rel: "icon", url: "black-font.png", type: "image/png" }],
 };
 
 export default function RootLayout({
