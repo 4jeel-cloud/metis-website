@@ -22,7 +22,7 @@ export default function Header() {
         <div className="scan-line" />
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Image src="black-font.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain sm:h-8" priority />
+            <Image src="black-font.png" alt="Metis" width={524} height={476} className="h-9 w-auto object-contain sm:h-8" priority />
           </Link>
 
           <nav className="hidden items-center md:flex">
