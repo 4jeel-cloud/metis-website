@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`} style={{ colorScheme: "light" }}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){document.documentElement.style.colorScheme="light";try{document.querySelector('meta[name="color-scheme"]')||document.head.insertAdjacentHTML('beforeend','<meta name="color-scheme" content="light">')}catch(e){}})()` }} />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         <div className="grain" />
         <Header />
