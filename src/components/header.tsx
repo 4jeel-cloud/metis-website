@@ -17,17 +17,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-3 sm:px-8 sm:pt-5">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-none border-2 border-[#ff0000] bg-white/95 px-5 py-3 shadow-[4px_4px_0_#ff0000] sm:px-6">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-none border-2 border-[#ff0000] bg-white/95 px-5 py-4 shadow-[4px_4px_0_#ff0000] sm:px-6 sm:py-3">
         <div className="scan-line" />
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <div className="relative">
-              <Square className="h-5 w-5 text-[#ff0000]" strokeWidth={3} />
+              <Square className="h-6 w-6 text-[#ff0000] sm:h-5 sm:w-5" strokeWidth={3} />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="h-1.5 w-1.5 bg-[#ff0000]" />
+                <div className="h-2 w-2 bg-[#ff0000] sm:h-1.5 sm:w-1.5" />
               </div>
             </div>
-            <Image src="/logo-black.png" alt="Metis" width={140} height={38} className="h-8 w-auto object-contain [mix-blend-mode:multiply]" priority />
+            <Image src="/logo-black.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain sm:h-8 [mix-blend-mode:multiply]" priority />
           </Link>
 
           <nav className="hidden items-center md:flex">

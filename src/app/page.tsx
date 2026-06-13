@@ -100,7 +100,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative flex min-h-screen flex-col overflow-hidden px-5 pt-20 sm:px-8 lg:pt-24">
+      <section className="relative min-h-screen overflow-hidden px-5 pt-16 pb-16 sm:px-8 sm:pt-20 lg:pt-24">
         <PixelGrid className="hidden md:block" />
         <PixelDiamond className="absolute right-[15%] top-[20%] h-8 w-8" size={32} />
         <PixelDiamond className="absolute left-[8%] top-[55%] h-5 w-5" size={20} />
@@ -113,7 +113,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
         />
 
-        <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center">
+        <div className="relative mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -136,7 +136,7 @@ export default function Home() {
               <Sparkle className="h-3 w-3" /> Est. 2024
             </motion.span>
 
-            <h1 className="max-w-4xl text-[clamp(2.2rem,8vw,5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
+            <h1 className="max-w-4xl text-[clamp(2.8rem,10vw,5.5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
               <motion.span
                 className="block glitch-text"
                 initial={{ opacity: 0, y: 40 }}
