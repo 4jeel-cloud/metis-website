@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* ── Services ── */}
-      <section id="services" className="relative px-5 py-24 sm:px-8 lg:py-28">
+      <section id="services" className="relative px-5 py-16 sm:px-8 md:py-20 lg:py-28">
         <PixelGrid />
         <div className="mx-auto max-w-6xl">
           <FadeUp>
@@ -234,7 +234,7 @@ export default function Home() {
               const Icon = s.icon
               return (
                 <FadeUp key={s.title} delay={i * 0.08}>
-                  <div className="group relative flex h-full flex-col border-2 border-[#1a1a1a] bg-white p-8 shadow-[4px_4px_0_#ff0000] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#ff0000]">
+                  <div className="group relative flex h-full flex-col border-2 border-[#1a1a1a] bg-white p-6 shadow-[4px_4px_0_#ff0000] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#ff0000] sm:p-8">
                     <div className="corner-brackets">
                       <Icon className="mb-4 h-6 w-6 text-[#ff0000]" />
                     </div>
@@ -252,7 +252,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── Work ── */}
-      <section id="work" className="relative overflow-hidden px-5 py-24 sm:px-8 lg:py-28">
+      <section id="work" className="relative overflow-hidden px-5 py-16 sm:px-8 md:py-20 lg:py-28">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff0000,#990000)]" />
         <PixelGrid className="opacity-[0.08]" />
         <div className="scan-line" />
@@ -294,11 +294,11 @@ export default function Home() {
                       }}
                     />
                     <Image src="/logo-white.png" alt="" width={72} height={72} className="h-20 w-20 object-contain opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:opacity-30" />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-8 pt-16">
-                      <div className="translate-y-3 text-sm font-medium text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6 pt-16 sm:p-8">
+                      <div className="text-sm font-medium text-white/70 md:translate-y-3 md:opacity-0 md:transition-all md:duration-300 md:group-hover:translate-y-0 md:group-hover:opacity-100">
                         {p.category}
                       </div>
-                      <div className="translate-y-3 text-xl font-bold text-white opacity-0 transition-all delay-75 duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="text-xl font-bold text-white md:translate-y-3 md:opacity-0 md:transition-all md:delay-75 md:duration-300 md:group-hover:translate-y-0 md:group-hover:opacity-100">
                         {p.title}
                       </div>
                     </div>
@@ -313,7 +313,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── About ── */}
-      <section id="about" className="relative px-5 py-24 sm:px-8 lg:py-28">
+      <section id="about" className="relative px-5 py-16 sm:px-8 md:py-20 lg:py-28">
         <PixelGrid />
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -338,7 +338,7 @@ export default function Home() {
               </ul>
             </FadeUp>
             <FadeUp delay={0.15}>
-              <div className="relative border-2 border-[#1a1a1a] bg-white p-10 shadow-[6px_6px_0_#ff0000]">
+              <div className="relative border-2 border-[#1a1a1a] bg-white p-6 shadow-[6px_6px_0_#ff0000] sm:p-10">
                 <div className="corner-brackets">
                   <div className="absolute -top-3 -right-3 border-2 border-[#ff0000] bg-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#ff0000]">
                     Philosophy
@@ -361,7 +361,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── Contact ── */}
-      <section id="contact" className="relative px-5 py-24 sm:px-8 lg:py-28">
+      <section id="contact" className="relative px-5 py-16 sm:px-8 md:py-20 lg:py-28">
         <div className="mx-auto max-w-xl">
           <FadeUp>
             <div className="text-center">
