@@ -101,7 +101,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative min-h-screen overflow-hidden px-5 pt-16 pb-16 sm:px-8 sm:pt-20 lg:pt-24">
+      <section className="relative flex min-h-[100dvh] flex-col overflow-hidden px-5 pt-16 pb-12 sm:px-8 sm:pt-20 lg:pt-24">
         <PixelGrid className="hidden md:block" />
         <PixelDiamond className="absolute right-[15%] top-[20%] h-8 w-8" size={32} />
         <PixelDiamond className="absolute left-[8%] top-[55%] h-5 w-5" size={20} />
@@ -109,7 +109,7 @@ export default function Home() {
 
         <div className="absolute left-0 right-0 top-0 h-px bg-[#ff0000]/20" />
 
-        <div className="relative mx-auto max-w-6xl">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -120,7 +120,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <Image src="/black-font.png" alt="Metis" width={240} height={64} className="mb-6 h-12 w-auto object-contain sm:h-14" priority />
+              <Image src="/black-font.png" alt="Metis" width={240} height={64} className="mb-4 h-10 w-auto object-contain sm:mb-6 sm:h-14" priority />
             </motion.div>
 
             <motion.span
@@ -132,7 +132,7 @@ export default function Home() {
               <Sparkle className="h-3 w-3" /> Est. 2026
             </motion.span>
 
-            <h1 className="max-w-4xl text-[clamp(2.8rem,10vw,5.5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
+            <h1 className="max-w-4xl text-[clamp(2.2rem,9vw,5.5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
               <motion.span
                 className="block"
                 initial={{ opacity: 0, y: 40 }}
@@ -160,7 +160,7 @@ export default function Home() {
             </h1>
 
             <motion.p
-              className="mt-5 max-w-xl text-base leading-[1.7] text-[#6b6b6b] sm:text-lg"
+              className="mt-4 max-w-xl text-base leading-[1.6] text-[#6b6b6b] sm:mt-5 sm:text-lg sm:leading-[1.7]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.75 }}
@@ -169,7 +169,7 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              className="mt-7 flex flex-wrap gap-4"
+              className="mt-6 flex flex-wrap gap-3 sm:mt-7 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* ── Services ── */}
-      <section id="services" className="relative px-5 py-16 sm:px-8 md:py-20 lg:py-28">
+      <section id="services" className="relative px-5 py-14 sm:px-8 md:py-20 lg:py-28">
         <PixelGrid />
         <div className="mx-auto max-w-6xl">
           <FadeUp>
@@ -248,7 +248,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── Work ── */}
-      <section id="work" className="relative overflow-hidden px-5 py-16 sm:px-8 md:py-20 lg:py-28">
+      <section id="work" className="relative overflow-hidden px-5 py-14 sm:px-8 md:py-20 lg:py-28">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff0000,#990000)]" />
         <PixelGrid className="opacity-[0.08]" />
         <div className="scan-line" />
@@ -269,7 +269,7 @@ export default function Home() {
               <FadeUp key={p.title} delay={i * 0.1}>
                 <a href="#" className="group block">
                   <div
-                    className="relative flex aspect-[4/5] items-center justify-center overflow-hidden border-2 border-white shadow-[6px_6px_0_rgba(0,0,0,0.2)] transition-all group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[4px_4px_0_rgba(0,0,0,0.2)]"
+                    className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-2 border-white shadow-[6px_6px_0_rgba(0,0,0,0.2)] transition-all group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[4px_4px_0_rgba(0,0,0,0.2)] sm:aspect-[4/5]"
                     style={{ background: `linear-gradient(135deg, ${p.from}, ${p.to})` }}
                   >
                     <div
@@ -309,7 +309,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── About ── */}
-      <section id="about" className="relative px-5 py-16 sm:px-8 md:py-20 lg:py-28">
+      <section id="about" className="relative px-5 py-14 sm:px-8 md:py-20 lg:py-28">
         <PixelGrid />
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -357,7 +357,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── Contact ── */}
-      <section id="contact" className="relative px-5 py-16 sm:px-8 md:py-20 lg:py-28">
+      <section id="contact" className="relative px-5 py-14 sm:px-8 md:py-20 lg:py-28">
         <div className="mx-auto max-w-xl">
           <FadeUp>
             <div className="text-center">
@@ -402,7 +402,7 @@ export default function Home() {
       <SectionDivider />
 
       {/* ── Footer ── */}
-      <footer className="relative overflow-hidden border-t-4 border-[#ff0000] bg-[#1a1a1a] px-5 py-16 sm:px-8">
+      <footer className="relative overflow-hidden border-t-4 border-[#ff0000] bg-[#1a1a1a] px-5 py-14 sm:px-8 sm:py-16">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
