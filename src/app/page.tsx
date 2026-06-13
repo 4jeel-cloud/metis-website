@@ -124,7 +124,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <Image src="/logo-black.png" alt="Metis" width={240} height={64} className="mb-6 h-12 w-auto object-contain sm:h-14 [mix-blend-mode:multiply]" priority />
+              <Image src="/logo-black.png" alt="Metis" width={240} height={64} className="mb-6 h-12 w-auto object-contain sm:h-14" priority />
             </motion.div>
 
             <motion.span
