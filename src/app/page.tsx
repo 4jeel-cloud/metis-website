@@ -269,18 +269,13 @@ export default function Home() {
             {work.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
                 <a href="#" className="flex flex-col items-center gap-3">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                  >
                     <Image
                       src={p.logo}
                       alt={p.title}
                       width={524}
                       height={476}
-                      className="h-28 w-auto border-2 border-white/30 object-contain p-3 opacity-80 transition-all duration-300 hover:border-white hover:opacity-100 sm:h-32"
+                      className="h-28 w-auto border-2 border-white object-contain opacity-80 transition-all duration-300 hover:scale-110 hover:opacity-100 sm:h-32"
                     />
-                  </motion.div>
                   <span className="text-xs font-semibold tracking-wider text-white/50">
                     {p.title}
                   </span>
