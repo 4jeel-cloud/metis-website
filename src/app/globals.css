@@ -90,6 +90,8 @@
     @apply bg-background text-foreground;
   }
   html {
+    color-scheme: light;
+    -webkit-color-scheme: light;
     @apply scroll-smooth;
   }
 }

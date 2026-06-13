@@ -265,28 +265,25 @@ export default function Home() {
             </h2>
           </FadeUp>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {work.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
-                <a href="#" className="group block">
+                <a href="#" className="flex flex-col items-center gap-3">
                   <motion.div
-                    className="relative flex items-center justify-center border-2 border-white/30 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
-                    whileHover={{ scale: 1.05, y: -4 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                   >
                     <Image
                       src={p.logo}
                       alt={p.title}
                       width={524}
                       height={476}
-                      className="h-28 w-auto object-contain opacity-70 transition-all duration-500 group-hover:opacity-100 sm:h-32"
+                      className="h-28 w-auto border-2 border-white/30 object-contain p-3 opacity-80 transition-all duration-300 hover:border-white hover:opacity-100 sm:h-32"
                     />
-                    <div className="absolute bottom-3 left-0 right-0 text-center">
-                      <span className="text-xs font-semibold tracking-wider text-white/50 transition-colors group-hover:text-white">
-                        {p.title}
-                      </span>
-                    </div>
                   </motion.div>
+                  <span className="text-xs font-semibold tracking-wider text-white/50">
+                    {p.title}
+                  </span>
                 </a>
               </FadeUp>
             ))}
