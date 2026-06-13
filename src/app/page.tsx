@@ -106,7 +106,7 @@ export default function Home() {
         <PixelDiamond className="absolute right-[15%] top-[20%] h-8 w-8" size={32} />
         <PixelDiamond className="absolute left-[8%] top-[55%] h-5 w-5" size={20} />
         <PixelDiamond className="absolute right-[20%] bottom-[25%] h-3 w-3" size={12} />
-        <pre className="absolute right-[-5%] top-1/2 hidden -translate-y-1/2 select-none text-[4px] leading-[5px] text-[#ff0000]/10 lg:block">
+        <pre className="absolute right-0 top-1/2 -translate-y-1/2 select-none text-[4px] leading-[5px] text-[#ff0000]/15 sm:text-[5px] sm:leading-[6px] md:text-[6px] md:leading-[7px] lg:text-[7px] lg:leading-[8px]">
 {`#**#                                                               
                                 ********           ****#                                          
                               **********         *******#                                         
