@@ -416,7 +416,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <FadeUp>
             <div className="flex flex-col items-center justify-between gap-10 sm:flex-row">
-              <Image src="white-font.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain invert brightness-0" />
+              <Image src="white-font.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain" />
               <div className="flex gap-10 text-sm">
                 <a href="#" className="text-white/50 transition-colors hover:text-white">Twitter</a>
                 <a href="#" className="text-white/50 transition-colors hover:text-white">GitHub</a>

@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${dmSans.variable} h-full antialiased`} style={{ colorScheme: "light" }}>
       <body className="flex min-h-full flex-col font-sans">
         <div className="grain" />
         <Header />
