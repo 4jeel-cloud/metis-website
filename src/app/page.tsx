@@ -129,7 +129,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
-              <Sparkle className="h-3 w-3" /> Est. 2024
+              <Sparkle className="h-3 w-3" /> Est. 2026
             </motion.span>
 
             <h1 className="max-w-4xl text-[clamp(2.8rem,10vw,5.5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
