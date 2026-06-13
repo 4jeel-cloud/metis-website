@@ -10,16 +10,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Metis — Design & Technology Studio",
+  title: "Metis — Open-Source Business Software",
   description:
-    "We build the invisible infrastructure. A design & technology studio crafting products that feel inevitable.",
-  icons: [
-    {
-      rel: "icon",
-      url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f9f6ee'/%3E%3Crect x='4' y='4' width='24' height='24' fill='%23ff0000'/%3E%3Crect x='8' y='8' width='16' height='16' fill='%23f9f6ee'/%3E%3Crect x='12' y='12' width='8' height='8' fill='%23ff0000'/%3E%3C/svg%3E",
-      type: "image/svg+xml",
-    },
-  ],
+    "ERP, CRM, POS, and custom business software. Open-source solutions for SMEs and enterprises.",
+  icons: [{ rel: "icon", url: "/black-font.png", type: "image/png" }],
 };
 
 export default function RootLayout({
