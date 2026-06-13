@@ -12,10 +12,10 @@ const services = [
 ]
 
 const work = [
-  { title: "Metis ERP", category: "Enterprise Platform", from: "#ff0000", to: "#cc0000" },
-  { title: "Metis CRM", category: "Customer Relations", from: "#e50000", to: "#990000" },
-  { title: "Metis POS", category: "Point of Sale", from: "#ff1a1a", to: "#800000" },
-  { title: "Metis POS Desktop", category: "Desktop App", from: "#cc0000", to: "#660000" },
+  { title: "Metis ERP", logo: "service-logos/logo-light-metis-erp.png" },
+  { title: "Metis CRM", logo: "service-logos/metis-crm-white-logo.png" },
+  { title: "Metis POS", logo: "service-logos/metis-pos-logo-white.png" },
+  { title: "Metis POS Desktop", logo: "service-logos/metis-pos-logo-white.png" },
 ]
 
 const stats = [
@@ -265,41 +265,28 @@ export default function Home() {
             </h2>
           </FadeUp>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {work.map((p, i) => (
               <FadeUp key={p.title} delay={i * 0.1}>
                 <a href="#" className="group block">
-                  <div
-                    className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-2 border-white shadow-[6px_6px_0_rgba(0,0,0,0.2)] transition-all group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[4px_4px_0_rgba(0,0,0,0.2)] sm:aspect-[4/5]"
-                    style={{ background: `linear-gradient(135deg, ${p.from}, ${p.to})` }}
+                  <motion.div
+                    className="relative flex items-center justify-center border-2 border-white/30 bg-white/5 p-8 backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
+                    whileHover={{ scale: 1.05, y: -4 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <div
-                      className="absolute inset-0 opacity-[0.05]"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                        backgroundSize: "180px 180px",
-                      }}
+                    <Image
+                      src={p.logo}
+                      alt={p.title}
+                      width={524}
+                      height={476}
+                      className="h-28 w-auto object-contain opacity-70 transition-all duration-500 group-hover:opacity-100 sm:h-32"
                     />
-                    <div
-                      className="absolute inset-0 opacity-[0.07]"
-                      style={{
-                        backgroundImage: `
-                          linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)
-                        `,
-                        backgroundSize: "32px 32px",
-                      }}
-                    />
-                    <Image src="white-font.png" alt="" width={524} height={476} className="h-20 w-20 object-contain opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:opacity-30" />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6 pt-16 sm:p-8">
-                      <div className="text-sm font-medium text-white/70 md:translate-y-3 md:opacity-0 md:transition-all md:duration-300 md:group-hover:translate-y-0 md:group-hover:opacity-100">
-                        {p.category}
-                      </div>
-                      <div className="text-xl font-bold text-white md:translate-y-3 md:opacity-0 md:transition-all md:delay-75 md:duration-300 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                    <div className="absolute bottom-3 left-0 right-0 text-center">
+                      <span className="text-xs font-semibold tracking-wider text-white/50 transition-colors group-hover:text-white">
                         {p.title}
-                      </div>
+                      </span>
                     </div>
-                  </div>
+                  </motion.div>
                 </a>
               </FadeUp>
             ))}
