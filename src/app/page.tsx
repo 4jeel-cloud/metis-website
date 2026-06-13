@@ -1,65 +1,440 @@
-import Image from "next/image";
+"use client"
+
+import { motion } from "motion/react"
+import Image from "next/image"
+import { ArrowRight, Palette, Globe, Cpu, Layers, Sparkle } from "lucide-react"
+
+const services = [
+  { title: "Strategy & Design", desc: "Brand identity, UX research, and product design.", icon: Palette },
+  { title: "Web Development", desc: "Fast, accessible front-end engineering.", icon: Globe },
+  { title: "Infrastructure", desc: "Cloud-native architecture at scale.", icon: Cpu },
+  { title: "Full-Stack", desc: "End-to-end product engineering.", icon: Layers },
+]
+
+const work = [
+  { title: "Nexus", category: "Platform", from: "#ff0000", to: "#cc0000" },
+  { title: "Aether", category: "Design System", from: "#e50000", to: "#990000" },
+  { title: "Cipher", category: "Mobile App", from: "#ff1a1a", to: "#800000" },
+]
+
+const stats = [
+  { v: "200+", l: "Projects" },
+  { v: "50+", l: "Team" },
+  { v: "12", l: "Countries" },
+  { v: "99%", l: "Retention" },
+]
+
+function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+function SectionDivider() {
+  return (
+    <div className="relative px-5 py-8 sm:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid-divider-thick" />
+      </div>
+    </div>
+  )
+}
+
+function PixelDiamond({ className, size = 12 }: { className?: string; size?: number }) {
+  return (
+    <div
+      className={`${className} pixel-float`}
+      style={{
+        width: size,
+        height: size,
+        background: "#ff0000",
+        transform: "rotate(45deg)",
+        opacity: 0.2,
+      }}
+    />
+  )
+}
+
+function PixelGrid({ className }: { className?: string }) {
+  return (
+    <div className={`pointer-events-none absolute inset-0 opacity-[0.04] ${className}`}
+      style={{
+        backgroundImage: `
+          linear-gradient(rgba(255, 0, 0, 0.5) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 0, 0, 0.5) 1px, transparent 1px)
+        `,
+        backgroundSize: "24px 24px",
+      }}
+    />
+  )
+}
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-block border-2 border-[#ff0000] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff0000]">
+      {children}
+    </span>
+  )
+}
+
+function SectionLine() {
+  return <div className="mt-3 h-1 w-12 bg-[#ff0000]" />
+}
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mt-8 text-[32px] font-bold leading-[1.08] tracking-[-0.03em] sm:text-[48px]">
+      {children}
+    </h2>
+  )
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* ── Hero ── */}
+      <section className="relative flex min-h-screen flex-col overflow-hidden px-5 pt-20 sm:px-8 lg:pt-24">
+        <PixelGrid className="hidden md:block" />
+        <PixelDiamond className="absolute right-[15%] top-[20%] h-8 w-8" size={32} />
+        <PixelDiamond className="absolute left-[8%] top-[55%] h-5 w-5" size={20} />
+        <PixelDiamond className="absolute right-[20%] bottom-[25%] h-3 w-3" size={12} />
+
+        <motion.div
+          className="absolute left-0 right-0 top-0 h-px bg-[#ff0000]/20"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              <Image src="/logo-black.png" alt="Metis" width={240} height={64} className="mb-6 h-12 w-auto object-contain sm:h-14 [mix-blend-mode:multiply]" priority />
+            </motion.div>
+
+            <motion.span
+              className="mb-3 inline-flex items-center gap-2 border-2 border-[#ff0000] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-[#ff0000]"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <Sparkle className="h-3 w-3" /> Est. 2024
+            </motion.span>
+
+            <h1 className="max-w-4xl text-[clamp(2.2rem,8vw,5rem)] font-bold leading-[1.0] tracking-[-0.04em]">
+              <motion.span
+                className="block glitch-text"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                We build the
+              </motion.span>
+              <motion.span
+                className="block text-[#ff0000]"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                invisible
+              </motion.span>
+              <motion.span
+                className="block"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                infrastructure.
+              </motion.span>
+            </h1>
+
+            <motion.p
+              className="mt-5 max-w-xl text-base leading-[1.7] text-[#6b6b6b] sm:text-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.75 }}
+            >
+              A design &amp; technology studio. We partner with ambitious teams to craft products that feel inevitable.
+            </motion.p>
+
+            <motion.div
+              className="mt-7 flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 border-2 border-[#ff0000] bg-[#ff0000] px-7 py-3 text-sm font-semibold text-white shadow-[4px_4px_0_#cc0000] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#cc0000] active:shadow-none"
+              >
+                See our work <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 border-2 border-[#1a1a1a] px-7 py-3 text-sm font-semibold text-[#1a1a1a] shadow-[4px_4px_0_#1a1a1a] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#1a1a1a] active:shadow-none"
+              >
+                Our Services
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      <SectionDivider />
+
+      {/* ── Stats ── */}
+      <section className="relative overflow-hidden border-b-4 border-[#ff0000] bg-[#ff0000] px-5 py-16 sm:px-8">
+        <PixelGrid className="opacity-[0.1]" />
+        <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-8 sm:grid-cols-4">
+          {stats.map((s, i) => (
+            <motion.div
+              key={s.l}
+              className="text-center"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="text-4xl font-bold text-white sm:text-5xl">{s.v}</div>
+              <div className="mt-2 text-sm text-white/60">{s.l}</div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Services ── */}
+      <section id="services" className="relative px-5 py-24 sm:px-8 lg:py-28">
+        <PixelGrid />
+        <div className="mx-auto max-w-6xl">
+          <FadeUp>
+            <SectionLabel>Services</SectionLabel>
+            <SectionLine />
+            <SectionHeading>
+              Everything from <span className="text-[#ff0000]">zero</span> to one.
+            </SectionHeading>
+          </FadeUp>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s, i) => {
+              const Icon = s.icon
+              return (
+                <FadeUp key={s.title} delay={i * 0.08}>
+                  <div className="group relative flex h-full flex-col border-2 border-[#1a1a1a] bg-white p-8 shadow-[4px_4px_0_#ff0000] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#ff0000]">
+                    <div className="corner-brackets">
+                      <Icon className="mb-4 h-6 w-6 text-[#ff0000]" />
+                    </div>
+                    <h3 className="text-lg font-bold">{s.title}</h3>
+                    <div className="my-4 h-[2px] w-8 bg-[#ff0000]" />
+                    <p className="flex-1 text-sm leading-[1.7] text-[#6b6b6b]">{s.desc}</p>
+                  </div>
+                </FadeUp>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ── Work ── */}
+      <section id="work" className="relative overflow-hidden px-5 py-24 sm:px-8 lg:py-28">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff0000,#990000)]" />
+        <PixelGrid className="opacity-[0.08]" />
+        <div className="scan-line" />
+
+        <div className="relative mx-auto max-w-6xl">
+          <FadeUp>
+            <span className="inline-block border-2 border-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+              Selected Work
+            </span>
+            <div className="mt-3 h-1 w-12 bg-white" />
+            <h2 className="mt-8 max-w-2xl text-[32px] font-bold leading-[1.08] tracking-[-0.03em] text-white sm:text-[48px]">
+              Things we&apos;ve <span className="text-white/60">made.</span>
+            </h2>
+          </FadeUp>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {work.map((p, i) => (
+              <FadeUp key={p.title} delay={i * 0.1}>
+                <a href="#" className="group block">
+                  <div
+                    className="relative flex aspect-[4/5] items-center justify-center overflow-hidden border-2 border-white shadow-[6px_6px_0_rgba(0,0,0,0.2)] transition-all group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[4px_4px_0_rgba(0,0,0,0.2)]"
+                    style={{ background: `linear-gradient(135deg, ${p.from}, ${p.to})` }}
+                  >
+                    <div
+                      className="absolute inset-0 opacity-[0.05]"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+                        backgroundSize: "180px 180px",
+                      }}
+                    />
+                    <div
+                      className="absolute inset-0 opacity-[0.07]"
+                      style={{
+                        backgroundImage: `
+                          linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)
+                        `,
+                        backgroundSize: "32px 32px",
+                      }}
+                    />
+                    <Image src="/logo-white.png" alt="" width={72} height={72} className="h-20 w-20 object-contain opacity-20 transition-all duration-500 group-hover:scale-110 group-hover:opacity-30" />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-8 pt-16">
+                      <div className="translate-y-3 text-sm font-medium text-white/70 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        {p.category}
+                      </div>
+                      <div className="translate-y-3 text-xl font-bold text-white opacity-0 transition-all delay-75 duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        {p.title}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ── About ── */}
+      <section id="about" className="relative px-5 py-24 sm:px-8 lg:py-28">
+        <PixelGrid />
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <FadeUp>
+              <SectionLabel>About</SectionLabel>
+              <SectionLine />
+              <SectionHeading>
+                Craft over <span className="text-[#ff0000]">chaos.</span>
+              </SectionHeading>
+              <p className="mt-6 text-base leading-[1.8] text-[#6b6b6b]">
+                Named after the Titaness of wisdom and craft, Metis was founded on the belief that
+                great technology should feel inevitable. We work with founders and enterprises to
+                turn ambiguous challenges into elegant, lasting systems.
+              </p>
+              <ul className="mt-8 space-y-4 border-l-4 border-[#ff0000] pl-5">
+                {["Remote-first across 12 countries", "Flat structure, no bureaucracy", "Open source by default"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm leading-[1.6] text-[#6b6b6b]">
+                    <span className="h-2 w-2 shrink-0 bg-[#ff0000]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+            <FadeUp delay={0.15}>
+              <div className="relative border-2 border-[#1a1a1a] bg-white p-10 shadow-[6px_6px_0_#ff0000]">
+                <div className="corner-brackets">
+                  <div className="absolute -top-3 -right-3 border-2 border-[#ff0000] bg-white px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#ff0000]">
+                    Philosophy
+                  </div>
+                  <p className="text-lg leading-[1.8] italic text-[#4a4a4a]">
+                    &ldquo;The best interface is the one you don&apos;t notice. Design isn&apos;t how
+                    something looks — it&apos;s how it works.&rdquo;
+                  </p>
+                  <div className="mt-8 h-px w-full bg-[#e0dcd3]" />
+                  <p className="mt-5 text-sm font-semibold text-[#ff0000]">
+                    — Metis Studio Philosophy
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ── Contact ── */}
+      <section id="contact" className="relative px-5 py-24 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-xl">
+          <FadeUp>
+            <div className="text-center">
+              <SectionLabel>Contact</SectionLabel>
+              <SectionLine />
+              <SectionHeading>
+                Have an idea? <span className="text-[#ff0000]">Tell us.</span>
+              </SectionHeading>
+              <p className="mt-4 text-sm text-[#6b6b6b]">
+                Drop a message and we&apos;ll get back within 24 hours.
+              </p>
+            </div>
+          </FadeUp>
+
+          <form onSubmit={(e) => e.preventDefault()} className="mt-12 space-y-6 text-left">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <FadeUp delay={0.05}>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#6b6b6b]">Name</label>
+                <input type="text" className="mt-2 w-full border-2 border-[#1a1a1a] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#ff0000] focus:shadow-[3px_3px_0_#ff0000]" placeholder="Your name" />
+              </FadeUp>
+              <FadeUp delay={0.1}>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#6b6b6b]">Email</label>
+                <input type="email" className="mt-2 w-full border-2 border-[#1a1a1a] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#ff0000] focus:shadow-[3px_3px_0_#ff0000]" placeholder="you@example.com" />
+              </FadeUp>
+            </div>
+            <FadeUp delay={0.15}>
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#6b6b6b]">Message</label>
+              <textarea rows={4} className="mt-2 w-full resize-none border-2 border-[#1a1a1a] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#ff0000] focus:shadow-[3px_3px_0_#ff0000]" placeholder="Tell us about your project..." />
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <button
+                type="submit"
+                className="w-full border-2 border-[#ff0000] bg-[#ff0000] px-6 py-3.5 text-sm font-bold text-white shadow-[4px_4px_0_#cc0000] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#cc0000] active:shadow-none"
+              >
+                Send Message
+              </button>
+            </FadeUp>
+          </form>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* ── Footer ── */}
+      <footer className="relative overflow-hidden border-t-4 border-[#ff0000] bg-[#1a1a1a] px-5 py-16 sm:px-8">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px)
+            `,
+            backgroundSize: "24px 24px",
+          }}
+        />
+        <div className="relative mx-auto max-w-6xl">
+          <FadeUp>
+            <div className="flex flex-col items-center justify-between gap-10 sm:flex-row">
+              <Image src="/logo-white.png" alt="Metis" width={160} height={44} className="h-9 w-auto object-contain invert brightness-0" />
+              <div className="flex gap-10 text-sm">
+                <a href="#" className="text-white/50 transition-colors hover:text-white">Twitter</a>
+                <a href="#" className="text-white/50 transition-colors hover:text-white">GitHub</a>
+                <a href="#" className="text-white/50 transition-colors hover:text-white">LinkedIn</a>
+              </div>
+            </div>
+            <div className="mt-12 border-t border-white/10 pt-8 text-center">
+              <p className="text-sm text-white/30">
+                &copy; {new Date().getFullYear()} Metis. All rights reserved.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </footer>
+    </>
+  )
 }
